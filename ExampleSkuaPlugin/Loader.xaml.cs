@@ -20,16 +20,19 @@ namespace ExamplePlugin
 
         public List<IOption>? Options { get; } = new();
 
+        public IPluginHelper? Helper { get; private set; }
+
         public void Load(IServiceProvider provider, IPluginHelper helper)
         {
+            Helper = helper;
             Bot = provider.GetRequiredService<IScriptInterface>();
             Bot?.Log($"{Name} Loaded.");
-            helper.AddMenuButton("test", MenuStripItem_Click);
+            helper.AddMenuButton("test", MenuButton_Click);
         }
 
-        private void MenuStripItem_Click()
+        private void MenuButton_Click()
         {
-            // This will show/hide the example form when the menu strip button is click
+            // This will show/hide the example window when the button is click
             if (IsVisible)
             {
                 Hide();
@@ -38,14 +41,15 @@ namespace ExamplePlugin
             else
             {
                 Show();
-                Bot?.Log($"{Name} shown");
                 BringIntoView();
+                Bot?.Log($"{Name} shown");
             }
         }
 
         public void Unload()
         {
             Bot?.Log($"{Name} Unloaded.");
+            Helper?.RemoveMenuButton("test");
         }
 
         public Loader()
@@ -53,19 +57,19 @@ namespace ExamplePlugin
             InitializeComponent();
         }
 
-        private void nameChangeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Bot != null && nameChangeTxt.Text.Length != 0)
-            {
-                Bot.Options.CustomName = nameChangeTxt.Text;
-            }
-        }
-
         private void MainWindow_Closing(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
             Hide();
             Bot?.Log($"{Name} hidden");
+        }
+
+        private void NameChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Bot != null && NameChangeTxt.Text.Length != 0)
+            {
+                Bot.Options.CustomName = NameChangeTxt.Text;
+            }
         }
     }
 }

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Example Plugin" Height="357" Width="363" Closing="MainWindow_Closing">
     <Grid>
-        <Button x:Name="nameChangeButton" Content="Button" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" Height="50" Width="152" Click="nameChangeButton_Click"/>
-        <TextBox x:Name="nameChangeTxt" HorizontalAlignment="Center" Margin="0,116,0,0" Text="Test" VerticalAlignment="Top" Width="153" Height="50" TextAlignment="Center" FontSize="16" TextWrapping="Wrap"/>
+        <Button x:Name="NameChangeButton" Content="Button" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" Height="50" Width="152" Click="NameChangeButton_Click"/>
+        <TextBox x:Name="NameChangeTxt" HorizontalAlignment="Center" Margin="0,116,0,0" Text="Test" VerticalAlignment="Top" Width="153" Height="50" TextAlignment="Center" FontSize="16" TextWrapping="Wrap"/>
 
     </Grid>
 </Window>
