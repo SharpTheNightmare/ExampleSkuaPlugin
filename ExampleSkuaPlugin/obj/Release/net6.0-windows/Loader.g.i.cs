@@ -77,7 +77,7 @@ namespace ExamplePlugin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ExampleSkuaPlugin;component/loader.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ExampleSkuaPlugin;V1.0.0.0;component/loader.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Loader.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
