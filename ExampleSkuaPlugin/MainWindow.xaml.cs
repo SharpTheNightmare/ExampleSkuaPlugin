@@ -28,5 +28,11 @@ namespace ExamplePlugin
                 Bot.Options.CustomName = NameChangeTxt.Text;
             }
         }
+        
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     }
 }
