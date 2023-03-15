@@ -23,24 +23,15 @@ namespace ExamplePlugin
         {
             Helper = helper;
             Bot = provider.GetRequiredService<IScriptInterface>();
+            
+            helper.AddMenuButton(Name, () =>
+            {
+                CosmeticsMainWindow.Instance.Show();
+                CosmeticsMainWindow.Instance.BringIntoView();
+                CosmeticsMainWindow.Instance.Activate();
+            });
+            
             Bot?.Log($"{Name} Loaded.");
-            helper.AddMenuButton("test", MenuButton_Click);
-        }
-
-        private void MenuButton_Click()
-        {
-            // This will show/hide the example window when the button is click
-            if (MainWindow.Instance.IsVisible)
-            {
-                MainWindow.Instance.Hide();
-                Bot?.Log($"{Name} hidden");
-            }
-            else
-            {
-                MainWindow.Instance.Show();
-                MainWindow.Instance.BringIntoView();
-                Bot?.Log($"{Name} shown");
-            }
         }
 
         public void Unload()
