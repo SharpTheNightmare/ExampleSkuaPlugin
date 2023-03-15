@@ -8,7 +8,8 @@
         xmlns:local="clr-namespace:ExamplePlugin"
         mc:Ignorable="d"
         Style="{StaticResource CustomWindow}"
-        Title="Example Plugin" Height="357" Width="363">
+        Title="Example Plugin" Height="357" Width="363"
+        Closing="MainWindow_Closing">
     <Grid>
         <Button x:Name="NameChangeButton" Content="Button" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" Height="50" Width="152"/>
         <TextBox x:Name="NameChangeTxt" HorizontalAlignment="Center" Margin="0,116,0,0" Text="Test" VerticalAlignment="Top" Width="153" Height="50" TextAlignment="Center" FontSize="16" TextWrapping="Wrap"/>
