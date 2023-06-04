@@ -26,9 +26,9 @@ namespace ExamplePlugin
             
             helper.AddMenuButton(Name, () =>
             {
-                CosmeticsMainWindow.Instance.Show();
-                CosmeticsMainWindow.Instance.BringIntoView();
-                CosmeticsMainWindow.Instance.Activate();
+                MainWindow.Instance.Show();
+                MainWindow.Instance.BringIntoView();
+                MainWindow.Instance.Activate();
             });
             
             Bot?.Log($"{Name} Loaded.");
