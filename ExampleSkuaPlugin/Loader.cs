@@ -37,7 +37,7 @@ namespace ExamplePlugin
         public void Unload()
         {
             Bot?.Log($"{Name} Unloaded.");
-            Helper?.RemoveMenuButton("test");
+            Helper?.RemoveMenuButton(Name);
         }
     }
 }
