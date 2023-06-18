@@ -49,33 +49,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Skua.App.WPF">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Skua.App.WPF.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Skua.Core">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Assemblies\Skua.Core.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Skua\Skua AQW Bot\Assemblies\Skua.Core.dll</HintPath>
     </Reference>
     <Reference Include="Skua.Core.Interfaces">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Assemblies\Skua.Core.Interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Skua.Core.Models">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Assemblies\Skua.Core.Models.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Skua.Core.Utils">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Assemblies\Skua.Core.Utils.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Skua\Skua AQW Bot\Assemblies\Skua.Core.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Skua.WPF">
-      <HintPath>..\..\..\..\..\..\Program Files\Skua\Assemblies\Skua.WPF.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Skua\Skua AQW Bot\Assemblies\Skua.WPF.dll</HintPath>
     </Reference>
   </ItemGroup>
 

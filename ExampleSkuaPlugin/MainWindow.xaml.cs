@@ -1,10 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Skua.Core.Interfaces;
+﻿using Skua.Core.Interfaces;
 using System.Windows;
-using System;
 using System.ComponentModel;
-using System.Collections.Generic;
 using Skua.WPF;
+using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ExamplePlugin
 {
@@ -14,11 +13,17 @@ namespace ExamplePlugin
     public partial class MainWindow : CustomWindow
     {
         public static MainWindow Instance { get; } = new();
-        public IScriptInterface? Bot { get; private set; }
+        public static IScriptInterface Bot => IScriptInterface.Instance;
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
         }
 
         private void NameChangeButton_Click(object sender, RoutedEventArgs e)
@@ -27,12 +32,6 @@ namespace ExamplePlugin
             {
                 Bot.Options.CustomName = NameChangeTxt.Text;
             }
-        }
-        
-        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            e.Cancel = true;
-            this.Hide();
         }
     }
 }
