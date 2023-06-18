@@ -1,13 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Skua.Core.Interfaces;
+using System.Windows;
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 
 namespace ExamplePlugin
 {
     public partial class Loader : ISkuaPlugin
     {
-        public static IScriptInterface Bot => IScriptInterface.Instance;
+        public IScriptInterface? Bot { get; private set; }
 
         public string Name => "Example Plugin";
         public string Author => "SharpTheNightmare";
@@ -20,14 +22,15 @@ namespace ExamplePlugin
         public void Load(IServiceProvider provider, IPluginHelper helper)
         {
             Helper = helper;
-
+            Bot = provider.GetRequiredService<IScriptInterface>();
+            
             helper.AddMenuButton(Name, () =>
             {
                 MainWindow.Instance.Show();
                 MainWindow.Instance.BringIntoView();
                 MainWindow.Instance.Activate();
             });
-
+            
             Bot?.Log($"{Name} Loaded.");
         }
 
